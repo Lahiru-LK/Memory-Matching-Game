@@ -32,45 +32,45 @@
             pictureBox1 = new PictureBox();
             button1 = new Button();
             label1 = new Label();
-            pictureBox2 = new PictureBox();
-            pictureBox3 = new PictureBox();
-            pictureBox4 = new PictureBox();
-            pictureBox5 = new PictureBox();
-            pictureBox6 = new PictureBox();
-            pictureBox7 = new PictureBox();
-            pictureBox8 = new PictureBox();
-            pictureBox9 = new PictureBox();
-            pictureBox10 = new PictureBox();
-            pictureBox11 = new PictureBox();
-            pictureBox12 = new PictureBox();
-            pictureBox13 = new PictureBox();
+            pb1 = new PictureBox();
+            pb3 = new PictureBox();
+            pb2 = new PictureBox();
+            pb5 = new PictureBox();
+            pb6 = new PictureBox();
+            pb4 = new PictureBox();
+            pb11 = new PictureBox();
+            pb12 = new PictureBox();
+            pb10 = new PictureBox();
+            pb8 = new PictureBox();
+            pb9 = new PictureBox();
+            pb7 = new PictureBox();
             label4 = new Label();
             label5 = new Label();
-            pictureBox14 = new PictureBox();
-            pictureBox15 = new PictureBox();
-            pictureBox16 = new PictureBox();
-            pictureBox17 = new PictureBox();
-            pictureBox18 = new PictureBox();
-            pictureBox19 = new PictureBox();
+            pbHeart1 = new PictureBox();
+            pbHeart2 = new PictureBox();
+            pbHeart4 = new PictureBox();
+            pbHeart3 = new PictureBox();
+            pbHeart6 = new PictureBox();
+            pbHeart5 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox13).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox15).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox16).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox17).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox18).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox19).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pb1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pb3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pb2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pb5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pb6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pb4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pb11).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pb12).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pb10).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pb8).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pb9).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pb7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbHeart1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbHeart2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbHeart4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbHeart3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbHeart6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbHeart5).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -111,125 +111,125 @@
             label1.Text = "Time Left : 30 ";
             label1.Click += label1_Click;
             // 
-            // pictureBox2
+            // pb1
             // 
-            pictureBox2.Image = Properties.Resources.Memory_Game_;
-            pictureBox2.Location = new Point(99, 112);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(82, 73);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 3;
-            pictureBox2.TabStop = false;
+            pb1.Image = Properties.Resources.Memory_Game_;
+            pb1.Location = new Point(99, 112);
+            pb1.Name = "pb1";
+            pb1.Size = new Size(82, 73);
+            pb1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pb1.TabIndex = 3;
+            pb1.TabStop = false;
             // 
-            // pictureBox3
+            // pb3
             // 
-            pictureBox3.Image = Properties.Resources.Memory_Game_;
-            pictureBox3.Location = new Point(275, 112);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(82, 73);
-            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox3.TabIndex = 4;
-            pictureBox3.TabStop = false;
+            pb3.Image = Properties.Resources.Memory_Game_;
+            pb3.Location = new Point(275, 112);
+            pb3.Name = "pb3";
+            pb3.Size = new Size(82, 73);
+            pb3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pb3.TabIndex = 4;
+            pb3.TabStop = false;
             // 
-            // pictureBox4
+            // pb2
             // 
-            pictureBox4.Image = Properties.Resources.Memory_Game_;
-            pictureBox4.Location = new Point(187, 112);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(82, 73);
-            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox4.TabIndex = 5;
-            pictureBox4.TabStop = false;
+            pb2.Image = Properties.Resources.Memory_Game_;
+            pb2.Location = new Point(187, 112);
+            pb2.Name = "pb2";
+            pb2.Size = new Size(82, 73);
+            pb2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pb2.TabIndex = 5;
+            pb2.TabStop = false;
             // 
-            // pictureBox5
+            // pb5
             // 
-            pictureBox5.Image = Properties.Resources.Memory_Game_;
-            pictureBox5.Location = new Point(187, 191);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(82, 73);
-            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox5.TabIndex = 8;
-            pictureBox5.TabStop = false;
+            pb5.Image = Properties.Resources.Memory_Game_;
+            pb5.Location = new Point(187, 191);
+            pb5.Name = "pb5";
+            pb5.Size = new Size(82, 73);
+            pb5.SizeMode = PictureBoxSizeMode.StretchImage;
+            pb5.TabIndex = 8;
+            pb5.TabStop = false;
             // 
-            // pictureBox6
+            // pb6
             // 
-            pictureBox6.Image = Properties.Resources.Memory_Game_;
-            pictureBox6.Location = new Point(275, 191);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(82, 73);
-            pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox6.TabIndex = 7;
-            pictureBox6.TabStop = false;
+            pb6.Image = Properties.Resources.Memory_Game_;
+            pb6.Location = new Point(275, 191);
+            pb6.Name = "pb6";
+            pb6.Size = new Size(82, 73);
+            pb6.SizeMode = PictureBoxSizeMode.StretchImage;
+            pb6.TabIndex = 7;
+            pb6.TabStop = false;
             // 
-            // pictureBox7
+            // pb4
             // 
-            pictureBox7.Image = Properties.Resources.Memory_Game_;
-            pictureBox7.Location = new Point(99, 191);
-            pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(82, 73);
-            pictureBox7.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox7.TabIndex = 6;
-            pictureBox7.TabStop = false;
+            pb4.Image = Properties.Resources.Memory_Game_;
+            pb4.Location = new Point(99, 191);
+            pb4.Name = "pb4";
+            pb4.Size = new Size(82, 73);
+            pb4.SizeMode = PictureBoxSizeMode.StretchImage;
+            pb4.TabIndex = 6;
+            pb4.TabStop = false;
             // 
-            // pictureBox8
+            // pb11
             // 
-            pictureBox8.Image = Properties.Resources.Memory_Game_;
-            pictureBox8.Location = new Point(187, 351);
-            pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(82, 73);
-            pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox8.TabIndex = 14;
-            pictureBox8.TabStop = false;
+            pb11.Image = Properties.Resources.Memory_Game_;
+            pb11.Location = new Point(187, 351);
+            pb11.Name = "pb11";
+            pb11.Size = new Size(82, 73);
+            pb11.SizeMode = PictureBoxSizeMode.StretchImage;
+            pb11.TabIndex = 14;
+            pb11.TabStop = false;
             // 
-            // pictureBox9
+            // pb12
             // 
-            pictureBox9.Image = Properties.Resources.Memory_Game_;
-            pictureBox9.Location = new Point(275, 351);
-            pictureBox9.Name = "pictureBox9";
-            pictureBox9.Size = new Size(82, 73);
-            pictureBox9.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox9.TabIndex = 13;
-            pictureBox9.TabStop = false;
+            pb12.Image = Properties.Resources.Memory_Game_;
+            pb12.Location = new Point(275, 351);
+            pb12.Name = "pb12";
+            pb12.Size = new Size(82, 73);
+            pb12.SizeMode = PictureBoxSizeMode.StretchImage;
+            pb12.TabIndex = 13;
+            pb12.TabStop = false;
             // 
-            // pictureBox10
+            // pb10
             // 
-            pictureBox10.Image = Properties.Resources.Memory_Game_;
-            pictureBox10.Location = new Point(99, 351);
-            pictureBox10.Name = "pictureBox10";
-            pictureBox10.Size = new Size(82, 73);
-            pictureBox10.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox10.TabIndex = 12;
-            pictureBox10.TabStop = false;
+            pb10.Image = Properties.Resources.Memory_Game_;
+            pb10.Location = new Point(99, 351);
+            pb10.Name = "pb10";
+            pb10.Size = new Size(82, 73);
+            pb10.SizeMode = PictureBoxSizeMode.StretchImage;
+            pb10.TabIndex = 12;
+            pb10.TabStop = false;
             // 
-            // pictureBox11
+            // pb8
             // 
-            pictureBox11.Image = Properties.Resources.Memory_Game_;
-            pictureBox11.Location = new Point(187, 272);
-            pictureBox11.Name = "pictureBox11";
-            pictureBox11.Size = new Size(82, 73);
-            pictureBox11.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox11.TabIndex = 11;
-            pictureBox11.TabStop = false;
+            pb8.Image = Properties.Resources.Memory_Game_;
+            pb8.Location = new Point(187, 272);
+            pb8.Name = "pb8";
+            pb8.Size = new Size(82, 73);
+            pb8.SizeMode = PictureBoxSizeMode.StretchImage;
+            pb8.TabIndex = 11;
+            pb8.TabStop = false;
             // 
-            // pictureBox12
+            // pb9
             // 
-            pictureBox12.Image = Properties.Resources.Memory_Game_;
-            pictureBox12.Location = new Point(275, 272);
-            pictureBox12.Name = "pictureBox12";
-            pictureBox12.Size = new Size(82, 73);
-            pictureBox12.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox12.TabIndex = 10;
-            pictureBox12.TabStop = false;
+            pb9.Image = Properties.Resources.Memory_Game_;
+            pb9.Location = new Point(275, 272);
+            pb9.Name = "pb9";
+            pb9.Size = new Size(82, 73);
+            pb9.SizeMode = PictureBoxSizeMode.StretchImage;
+            pb9.TabIndex = 10;
+            pb9.TabStop = false;
             // 
-            // pictureBox13
+            // pb7
             // 
-            pictureBox13.Image = Properties.Resources.Memory_Game_;
-            pictureBox13.Location = new Point(99, 272);
-            pictureBox13.Name = "pictureBox13";
-            pictureBox13.Size = new Size(82, 73);
-            pictureBox13.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox13.TabIndex = 9;
-            pictureBox13.TabStop = false;
+            pb7.Image = Properties.Resources.Memory_Game_;
+            pb7.Location = new Point(99, 272);
+            pb7.Name = "pb7";
+            pb7.Size = new Size(82, 73);
+            pb7.SizeMode = PictureBoxSizeMode.StretchImage;
+            pb7.TabIndex = 9;
+            pb7.TabStop = false;
             // 
             // label4
             // 
@@ -257,71 +257,71 @@
             label5.Text = "Point : 0";
             label5.Click += label5_Click;
             // 
-            // pictureBox14
+            // pbHeart1
             // 
-            pictureBox14.BorderStyle = BorderStyle.Fixed3D;
-            pictureBox14.Image = Properties.Resources.hart;
-            pictureBox14.Location = new Point(157, 466);
-            pictureBox14.Name = "pictureBox14";
-            pictureBox14.Size = new Size(20, 20);
-            pictureBox14.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox14.TabIndex = 19;
-            pictureBox14.TabStop = false;
+            pbHeart1.BorderStyle = BorderStyle.Fixed3D;
+            pbHeart1.Image = Properties.Resources.hart;
+            pbHeart1.Location = new Point(157, 466);
+            pbHeart1.Name = "pbHeart1";
+            pbHeart1.Size = new Size(20, 20);
+            pbHeart1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbHeart1.TabIndex = 19;
+            pbHeart1.TabStop = false;
             // 
-            // pictureBox15
+            // pbHeart2
             // 
-            pictureBox15.BorderStyle = BorderStyle.Fixed3D;
-            pictureBox15.Image = Properties.Resources.hart;
-            pictureBox15.Location = new Point(183, 466);
-            pictureBox15.Name = "pictureBox15";
-            pictureBox15.Size = new Size(20, 20);
-            pictureBox15.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox15.TabIndex = 20;
-            pictureBox15.TabStop = false;
+            pbHeart2.BorderStyle = BorderStyle.Fixed3D;
+            pbHeart2.Image = Properties.Resources.hart;
+            pbHeart2.Location = new Point(183, 466);
+            pbHeart2.Name = "pbHeart2";
+            pbHeart2.Size = new Size(20, 20);
+            pbHeart2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbHeart2.TabIndex = 20;
+            pbHeart2.TabStop = false;
             // 
-            // pictureBox16
+            // pbHeart4
             // 
-            pictureBox16.BorderStyle = BorderStyle.Fixed3D;
-            pictureBox16.Image = Properties.Resources.hart;
-            pictureBox16.Location = new Point(235, 466);
-            pictureBox16.Name = "pictureBox16";
-            pictureBox16.Size = new Size(20, 20);
-            pictureBox16.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox16.TabIndex = 22;
-            pictureBox16.TabStop = false;
+            pbHeart4.BorderStyle = BorderStyle.Fixed3D;
+            pbHeart4.Image = Properties.Resources.hart;
+            pbHeart4.Location = new Point(235, 466);
+            pbHeart4.Name = "pbHeart4";
+            pbHeart4.Size = new Size(20, 20);
+            pbHeart4.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbHeart4.TabIndex = 22;
+            pbHeart4.TabStop = false;
             // 
-            // pictureBox17
+            // pbHeart3
             // 
-            pictureBox17.BorderStyle = BorderStyle.Fixed3D;
-            pictureBox17.Image = Properties.Resources.hart;
-            pictureBox17.Location = new Point(209, 466);
-            pictureBox17.Name = "pictureBox17";
-            pictureBox17.Size = new Size(20, 20);
-            pictureBox17.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox17.TabIndex = 21;
-            pictureBox17.TabStop = false;
+            pbHeart3.BorderStyle = BorderStyle.Fixed3D;
+            pbHeart3.Image = Properties.Resources.hart;
+            pbHeart3.Location = new Point(209, 466);
+            pbHeart3.Name = "pbHeart3";
+            pbHeart3.Size = new Size(20, 20);
+            pbHeart3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbHeart3.TabIndex = 21;
+            pbHeart3.TabStop = false;
             // 
-            // pictureBox18
+            // pbHeart6
             // 
-            pictureBox18.BorderStyle = BorderStyle.Fixed3D;
-            pictureBox18.Image = (Image)resources.GetObject("pictureBox18.Image");
-            pictureBox18.Location = new Point(284, 466);
-            pictureBox18.Name = "pictureBox18";
-            pictureBox18.Size = new Size(20, 20);
-            pictureBox18.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox18.TabIndex = 24;
-            pictureBox18.TabStop = false;
+            pbHeart6.BorderStyle = BorderStyle.Fixed3D;
+            pbHeart6.Image = (Image)resources.GetObject("pbHeart6.Image");
+            pbHeart6.Location = new Point(284, 466);
+            pbHeart6.Name = "pbHeart6";
+            pbHeart6.Size = new Size(20, 20);
+            pbHeart6.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbHeart6.TabIndex = 24;
+            pbHeart6.TabStop = false;
             // 
-            // pictureBox19
+            // pbHeart5
             // 
-            pictureBox19.BorderStyle = BorderStyle.Fixed3D;
-            pictureBox19.Image = Properties.Resources.hart;
-            pictureBox19.Location = new Point(258, 466);
-            pictureBox19.Name = "pictureBox19";
-            pictureBox19.Size = new Size(20, 20);
-            pictureBox19.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox19.TabIndex = 23;
-            pictureBox19.TabStop = false;
+            pbHeart5.BorderStyle = BorderStyle.Fixed3D;
+            pbHeart5.Image = Properties.Resources.hart;
+            pbHeart5.Location = new Point(258, 466);
+            pbHeart5.Name = "pbHeart5";
+            pbHeart5.Size = new Size(20, 20);
+            pbHeart5.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbHeart5.TabIndex = 23;
+            pbHeart5.TabStop = false;
             // 
             // Form1
             // 
@@ -329,26 +329,26 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.GhostWhite;
             ClientSize = new Size(452, 651);
-            Controls.Add(pictureBox18);
-            Controls.Add(pictureBox19);
-            Controls.Add(pictureBox16);
-            Controls.Add(pictureBox17);
-            Controls.Add(pictureBox15);
-            Controls.Add(pictureBox14);
+            Controls.Add(pbHeart6);
+            Controls.Add(pbHeart5);
+            Controls.Add(pbHeart4);
+            Controls.Add(pbHeart3);
+            Controls.Add(pbHeart2);
+            Controls.Add(pbHeart1);
             Controls.Add(label5);
             Controls.Add(label4);
-            Controls.Add(pictureBox8);
-            Controls.Add(pictureBox9);
-            Controls.Add(pictureBox10);
-            Controls.Add(pictureBox11);
-            Controls.Add(pictureBox12);
-            Controls.Add(pictureBox13);
-            Controls.Add(pictureBox5);
-            Controls.Add(pictureBox6);
-            Controls.Add(pictureBox7);
-            Controls.Add(pictureBox4);
-            Controls.Add(pictureBox3);
-            Controls.Add(pictureBox2);
+            Controls.Add(pb11);
+            Controls.Add(pb12);
+            Controls.Add(pb10);
+            Controls.Add(pb8);
+            Controls.Add(pb9);
+            Controls.Add(pb7);
+            Controls.Add(pb5);
+            Controls.Add(pb6);
+            Controls.Add(pb4);
+            Controls.Add(pb2);
+            Controls.Add(pb3);
+            Controls.Add(pb1);
             Controls.Add(label1);
             Controls.Add(button1);
             Controls.Add(pictureBox1);
@@ -359,24 +359,24 @@
             Text = "Memory Matching Game";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox13).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox14).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox15).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox16).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox17).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox18).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox19).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pb1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pb3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pb2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pb5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pb6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pb4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pb11).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pb12).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pb10).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pb8).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pb9).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pb7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbHeart1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbHeart2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbHeart4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbHeart3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbHeart6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbHeart5).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -386,25 +386,25 @@
         private PictureBox pictureBox1;
         private Button button1;
         private Label label1;
-        private PictureBox pictureBox2;
-        private PictureBox pictureBox3;
-        private PictureBox pictureBox4;
-        private PictureBox pictureBox5;
-        private PictureBox pictureBox6;
-        private PictureBox pictureBox7;
-        private PictureBox pictureBox8;
-        private PictureBox pictureBox9;
-        private PictureBox pictureBox10;
-        private PictureBox pictureBox11;
-        private PictureBox pictureBox12;
-        private PictureBox pictureBox13;
+        private PictureBox pb1;
+        private PictureBox pb3;
+        private PictureBox pb2;
+        private PictureBox pb5;
+        private PictureBox pb6;
+        private PictureBox pb4;
+        private PictureBox pb11;
+        private PictureBox pb12;
+        private PictureBox pb10;
+        private PictureBox pb8;
+        private PictureBox pb9;
+        private PictureBox pb7;
         private Label label4;
         private Label label5;
-        private PictureBox pictureBox14;
-        private PictureBox pictureBox15;
-        private PictureBox pictureBox16;
-        private PictureBox pictureBox17;
-        private PictureBox pictureBox18;
-        private PictureBox pictureBox19;
+        private PictureBox pbHeart1;
+        private PictureBox pbHeart2;
+        private PictureBox pbHeart4;
+        private PictureBox pbHeart3;
+        private PictureBox pbHeart6;
+        private PictureBox pbHeart5;
     }
 }

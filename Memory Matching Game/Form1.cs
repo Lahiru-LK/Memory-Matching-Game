@@ -8,13 +8,44 @@ namespace Memory_Matching_Game
 
         //List to store the picture boxes
 
+        List<PictureBox> CardsPictureBoxe = new List<PictureBox>();
+        List<PictureBox> LifePictureBoxe = new List<PictureBox>();
+
 
 
         public Form1()
         {
             InitializeComponent();
             LoadImages();
+
+            //we can call Randomize() method to randomize the images
+            Randomize();
+            Randomize();
+            Randomize();
             
+            CardsPictureBoxe.Add(pb1);
+            CardsPictureBoxe.Add(pb2);
+            CardsPictureBoxe.Add(pb3);
+            CardsPictureBoxe.Add(pb4);
+            CardsPictureBoxe.Add(pb5);
+            CardsPictureBoxe.Add(pb6);
+            CardsPictureBoxe.Add(pb7);
+            CardsPictureBoxe.Add(pb8);
+            CardsPictureBoxe.Add(pb9);
+            CardsPictureBoxe.Add(pb10);
+            CardsPictureBoxe.Add(pb11);
+            CardsPictureBoxe.Add(pb12);
+
+            LifePictureBoxe.Add(pbHeart6);
+            LifePictureBoxe.Add(pbHeart5);
+            LifePictureBoxe.Add(pbHeart4);
+            LifePictureBoxe.Add(pbHeart3);
+            LifePictureBoxe.Add(pbHeart2);
+            LifePictureBoxe.Add(pbHeart1);
+
+
+
+
 
 
         }
@@ -51,20 +82,24 @@ namespace Memory_Matching_Game
 
             Dictionary<string, Image> imgTmp = new Dictionary<string, Image>();
 
-            while (CardImages.Count > 0) 
-            { 
-            
+            while (CardImages.Count > 0)
+            {
+
                 //select a random image
-                Random rand = new Random();
-                int index = rand.Next(0, CardImages.Count);
-                string key = CardImages.Keys.ElementAt(index);
-                Image value = CardImages[key];
-
-                //add the image to the temporary dictionary
-                imgTmp.Add(key, value);
-
-                //remove the image from the original dictionary
+                Random rnd = new Random();
+                int index = rnd.Next(0, CardImages.Count - 1);
+                string key = CardImages.ElementAt(index).Key;
+                imgTmp.Add(key, CardImages.ElementAt(index).Value);
                 CardImages.Remove(key);
+
+                //just add sleep of 20ms every loop
+                System.Threading.Thread.Sleep(20);
+            }
+
+            foreach (var item in imgTmp)
+            {
+                CardImages.Add(item.Key, item.Value);
+                
             }
 
            
