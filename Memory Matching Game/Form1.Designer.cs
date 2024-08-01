@@ -88,7 +88,6 @@
             // button1
             // 
             button1.BackColor = Color.FromArgb(255, 192, 192);
-            button1.BackgroundImageLayout = ImageLayout.Center;
             button1.Font = new Font("Showcard Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.IndianRed;
             button1.Location = new Point(121, 531);
