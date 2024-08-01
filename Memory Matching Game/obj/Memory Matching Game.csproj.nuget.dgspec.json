@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PC\\Desktop\\Memory Matching Game\\Memory Matching Game\\Memory Matching Game.csproj": {}
+    "C:\\Users\\PC\\Desktop\\Memory-Matching-Game\\Memory Matching Game\\Memory Matching Game.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PC\\Desktop\\Memory Matching Game\\Memory Matching Game\\Memory Matching Game.csproj": {
+    "C:\\Users\\PC\\Desktop\\Memory-Matching-Game\\Memory Matching Game\\Memory Matching Game.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC\\Desktop\\Memory Matching Game\\Memory Matching Game\\Memory Matching Game.csproj",
+        "projectUniqueName": "C:\\Users\\PC\\Desktop\\Memory-Matching-Game\\Memory Matching Game\\Memory Matching Game.csproj",
         "projectName": "Memory Matching Game",
-        "projectPath": "C:\\Users\\PC\\Desktop\\Memory Matching Game\\Memory Matching Game\\Memory Matching Game.csproj",
+        "projectPath": "C:\\Users\\PC\\Desktop\\Memory-Matching-Game\\Memory Matching Game\\Memory Matching Game.csproj",
         "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC\\Desktop\\Memory Matching Game\\Memory Matching Game\\obj\\",
+        "outputPath": "C:\\Users\\PC\\Desktop\\Memory-Matching-Game\\Memory Matching Game\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
