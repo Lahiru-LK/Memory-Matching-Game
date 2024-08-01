@@ -19,14 +19,15 @@ namespace Memory_Matching_Game
 
         private void LoadImages()
         {
-            //in this game, we have 7 images, so we will load 2 of each image
-            CardImages.Add("A", Properties.Resources.im1);
-            CardImages.Add("B", Properties.Resources.im2);
-            CardImages.Add("C", Properties.Resources.im3);
-            CardImages.Add("D", Properties.Resources.im4);
-            CardImages.Add("E", Properties.Resources.im5);
-            CardImages.Add("F", Properties.Resources.im5);
-            CardImages.Add("G", Properties.Resources.im6);
+            //in this game, we have 7 images, we will load 2 of each image
+            CardImages.Add("", Properties.Resources.im1);
+            CardImages.Add("", Properties.Resources.im2);
+            CardImages.Add("", Properties.Resources.im3);
+            CardImages.Add("", Properties.Resources.im4);
+            CardImages.Add("", Properties.Resources.im5);
+            CardImages.Add("", Properties.Resources.im5);
+            CardImages.Add("", Properties.Resources.im6);
+
             
         }
 
