@@ -1,0 +1,17 @@
+C:\Users\PC\Desktop\Memory Matching Game\Memory Matching Game\bin\Debug\net8.0-windows\Memory Matching Game.exe
+C:\Users\PC\Desktop\Memory Matching Game\Memory Matching Game\bin\Debug\net8.0-windows\Memory Matching Game.deps.json
+C:\Users\PC\Desktop\Memory Matching Game\Memory Matching Game\bin\Debug\net8.0-windows\Memory Matching Game.runtimeconfig.json
+C:\Users\PC\Desktop\Memory Matching Game\Memory Matching Game\bin\Debug\net8.0-windows\Memory Matching Game.dll
+C:\Users\PC\Desktop\Memory Matching Game\Memory Matching Game\bin\Debug\net8.0-windows\Memory Matching Game.pdb
+C:\Users\PC\Desktop\Memory Matching Game\Memory Matching Game\obj\Debug\net8.0-windows\Memory_Matching_Game.Form1.resources
+C:\Users\PC\Desktop\Memory Matching Game\Memory Matching Game\obj\Debug\net8.0-windows\Memory_Matching_Game.Properties.Resources.resources
+C:\Users\PC\Desktop\Memory Matching Game\Memory Matching Game\obj\Debug\net8.0-windows\Memory Matching Game.csproj.GenerateResource.cache
+C:\Users\PC\Desktop\Memory Matching Game\Memory Matching Game\obj\Debug\net8.0-windows\Memory Matching Game.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC\Desktop\Memory Matching Game\Memory Matching Game\obj\Debug\net8.0-windows\Memory Matching Game.AssemblyInfoInputs.cache
+C:\Users\PC\Desktop\Memory Matching Game\Memory Matching Game\obj\Debug\net8.0-windows\Memory Matching Game.AssemblyInfo.cs
+C:\Users\PC\Desktop\Memory Matching Game\Memory Matching Game\obj\Debug\net8.0-windows\Memory Matching Game.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\Memory Matching Game\Memory Matching Game\obj\Debug\net8.0-windows\Memory Matching Game.dll
+C:\Users\PC\Desktop\Memory Matching Game\Memory Matching Game\obj\Debug\net8.0-windows\refint\Memory Matching Game.dll
+C:\Users\PC\Desktop\Memory Matching Game\Memory Matching Game\obj\Debug\net8.0-windows\Memory Matching Game.pdb
+C:\Users\PC\Desktop\Memory Matching Game\Memory Matching Game\obj\Debug\net8.0-windows\Memory Matching Game.genruntimeconfig.cache
+C:\Users\PC\Desktop\Memory Matching Game\Memory Matching Game\obj\Debug\net8.0-windows\ref\Memory Matching Game.dll
