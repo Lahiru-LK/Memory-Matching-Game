@@ -11,6 +11,9 @@ namespace Memory_Matching_Game
         List<PictureBox> CardsPictureBoxe = new List<PictureBox>();
         List<PictureBox> LifePictureBoxe = new List<PictureBox>();
 
+        int previousIndexOpen;
+        bool hasOpenCard = false;
+
 
 
         public Form1()
@@ -22,7 +25,7 @@ namespace Memory_Matching_Game
             Randomize();
             Randomize();
             Randomize();
-            
+
             CardsPictureBoxe.Add(pb1);
             CardsPictureBoxe.Add(pb2);
             CardsPictureBoxe.Add(pb3);
@@ -71,7 +74,7 @@ namespace Memory_Matching_Game
             CardImages.Add("im5_DUP", Properties.Resources.im5);
             CardImages.Add("im6_DUP", Properties.Resources.im6);
 
-            
+
         }
 
         //Randomize the images
@@ -99,47 +102,110 @@ namespace Memory_Matching_Game
             foreach (var item in imgTmp)
             {
                 CardImages.Add(item.Key, item.Value);
-                
+
             }
 
-           
+
         }
-
-
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
+            // Add code to handle the click event on pictureBox1
+            MessageBox.Show("PictureBox1 clicked!");
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            // Add code to handle the click event on button1
+            MessageBox.Show("Restart button clicked!");
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
+            // Add code to handle the click event on label1
+            MessageBox.Show("Label1 clicked!");
         }
 
         private void label4_Click(object sender, EventArgs e)
         {
-
+            // Add code to handle the click event on label4
+            MessageBox.Show("Label4 clicked!");
         }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            // Add code to handle the click event on label5
+            MessageBox.Show("Label5 clicked!");
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // Add code to handle the load event of the form
+            MessageBox.Show("Form loaded!");
+        }
+
+
+
+
+        private void pb1_Click(object sender, EventArgs e)
+        {
+            PictureBox pb = (PictureBox)sender;
+
+            //0 means the pb is turn off, we will open it and check if user guessed the correct cards
+            if (pb.Tag.ToString() == "0")
+            {
+                int index = CardsPictureBoxe.IndexOf(pb);
+                //mean user has already selected the 1st image, need to compare  if thet are same
+
+                if (hasOpenCard)
+                {
+                    string previouseImageId = CardImages.ElementAt(previousIndexOpen).Key;
+                    string currentImageId = CardImages.ElementAt(index).Key;
+                    bool isMatch = false;
+
+                    //check if they have same ID
+                    if (previouseImageId.Replace("_DUP", "") == currentImageId.Replace("_DUP", ""))
+                    {
+                        //remove _DUP  so they can match if they are same
+
+                        isMatch = true;
+                        pb.Tag = 1;
+                        pb.Image = CardImages.ElementAt(index).Value;
+
+                    }
+
+                    if (isMatch)
+                    {
+                        //revert thr card
+                        CardsPictureBoxe[previousIndexOpen].Image = CardsPictureBoxe[index].Image = Properties.Resources.Back_card;
+                        CardsPictureBoxe[previousIndexOpen].Tag = 0;
+
+                        //Visual show it ti user , we will add delay here so user can see the card before it revert back to back card
+                        //achive this , we will use timer control
+
+
+                    }
+
+
+
+                }
+                else
+                {
+                    //means this picturebox us already open, next time user click 
+                    pb.Tag = "1";
+                    previousIndexOpen = index;
+                    pb.Image = CardImages.ElementAt(index).Value;
+
+
+                }
+                //reverse the vale of this flag
+                hasOpenCard = !hasOpenCard;
+
+
+            }
+        }
+
     }
 }
+
+
+

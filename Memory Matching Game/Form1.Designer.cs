@@ -83,7 +83,7 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
+            pictureBox1.Click += pb1_Click;
             // 
             // button1
             // 
@@ -113,123 +113,147 @@
             // 
             // pb1
             // 
-            pb1.Image = Properties.Resources.Memory_Game_;
+            pb1.Image = (Image)resources.GetObject("pb1.Image");
             pb1.Location = new Point(99, 112);
             pb1.Name = "pb1";
             pb1.Size = new Size(82, 73);
             pb1.SizeMode = PictureBoxSizeMode.StretchImage;
             pb1.TabIndex = 3;
             pb1.TabStop = false;
+            pb1.Tag = "0";
+            pb1.Click += pb1_Click;
             // 
             // pb3
             // 
-            pb3.Image = Properties.Resources.Memory_Game_;
+            pb3.Image = (Image)resources.GetObject("pb3.Image");
             pb3.Location = new Point(275, 112);
             pb3.Name = "pb3";
             pb3.Size = new Size(82, 73);
             pb3.SizeMode = PictureBoxSizeMode.StretchImage;
             pb3.TabIndex = 4;
             pb3.TabStop = false;
+            pb3.Tag = "0";
+            pb3.Click += pb1_Click;
             // 
             // pb2
             // 
-            pb2.Image = Properties.Resources.Memory_Game_;
+            pb2.Image = (Image)resources.GetObject("pb2.Image");
             pb2.Location = new Point(187, 112);
             pb2.Name = "pb2";
             pb2.Size = new Size(82, 73);
             pb2.SizeMode = PictureBoxSizeMode.StretchImage;
             pb2.TabIndex = 5;
             pb2.TabStop = false;
+            pb2.Tag = "0";
+            pb2.Click += pb1_Click;
             // 
             // pb5
             // 
-            pb5.Image = Properties.Resources.Memory_Game_;
+            pb5.Image = (Image)resources.GetObject("pb5.Image");
             pb5.Location = new Point(187, 191);
             pb5.Name = "pb5";
             pb5.Size = new Size(82, 73);
             pb5.SizeMode = PictureBoxSizeMode.StretchImage;
             pb5.TabIndex = 8;
             pb5.TabStop = false;
+            pb5.Tag = "0";
+            pb5.Click += pb1_Click;
             // 
             // pb6
             // 
-            pb6.Image = Properties.Resources.Memory_Game_;
+            pb6.Image = (Image)resources.GetObject("pb6.Image");
             pb6.Location = new Point(275, 191);
             pb6.Name = "pb6";
             pb6.Size = new Size(82, 73);
             pb6.SizeMode = PictureBoxSizeMode.StretchImage;
             pb6.TabIndex = 7;
             pb6.TabStop = false;
+            pb6.Tag = "0";
+            pb6.Click += pb1_Click;
             // 
             // pb4
             // 
-            pb4.Image = Properties.Resources.Memory_Game_;
+            pb4.Image = (Image)resources.GetObject("pb4.Image");
             pb4.Location = new Point(99, 191);
             pb4.Name = "pb4";
             pb4.Size = new Size(82, 73);
             pb4.SizeMode = PictureBoxSizeMode.StretchImage;
             pb4.TabIndex = 6;
             pb4.TabStop = false;
+            pb4.Tag = "0";
+            pb4.Click += pb1_Click;
             // 
             // pb11
             // 
-            pb11.Image = Properties.Resources.Memory_Game_;
+            pb11.Image = (Image)resources.GetObject("pb11.Image");
             pb11.Location = new Point(187, 351);
             pb11.Name = "pb11";
             pb11.Size = new Size(82, 73);
             pb11.SizeMode = PictureBoxSizeMode.StretchImage;
             pb11.TabIndex = 14;
             pb11.TabStop = false;
+            pb11.Tag = "0";
+            pb11.Click += pb1_Click;
             // 
             // pb12
             // 
-            pb12.Image = Properties.Resources.Memory_Game_;
+            pb12.Image = (Image)resources.GetObject("pb12.Image");
             pb12.Location = new Point(275, 351);
             pb12.Name = "pb12";
             pb12.Size = new Size(82, 73);
             pb12.SizeMode = PictureBoxSizeMode.StretchImage;
             pb12.TabIndex = 13;
             pb12.TabStop = false;
+            pb12.Tag = "0";
+            pb12.Click += pb1_Click;
             // 
             // pb10
             // 
-            pb10.Image = Properties.Resources.Memory_Game_;
+            pb10.Image = (Image)resources.GetObject("pb10.Image");
             pb10.Location = new Point(99, 351);
             pb10.Name = "pb10";
             pb10.Size = new Size(82, 73);
             pb10.SizeMode = PictureBoxSizeMode.StretchImage;
             pb10.TabIndex = 12;
             pb10.TabStop = false;
+            pb10.Tag = "0";
+            pb10.Click += pb1_Click;
             // 
             // pb8
             // 
-            pb8.Image = Properties.Resources.Memory_Game_;
+            pb8.Image = (Image)resources.GetObject("pb8.Image");
             pb8.Location = new Point(187, 272);
             pb8.Name = "pb8";
             pb8.Size = new Size(82, 73);
             pb8.SizeMode = PictureBoxSizeMode.StretchImage;
             pb8.TabIndex = 11;
             pb8.TabStop = false;
+            pb8.Tag = "0";
+            pb8.Click += pb1_Click;
             // 
             // pb9
             // 
-            pb9.Image = Properties.Resources.Memory_Game_;
+            pb9.Image = (Image)resources.GetObject("pb9.Image");
             pb9.Location = new Point(275, 272);
             pb9.Name = "pb9";
             pb9.Size = new Size(82, 73);
             pb9.SizeMode = PictureBoxSizeMode.StretchImage;
             pb9.TabIndex = 10;
             pb9.TabStop = false;
+            pb9.Tag = "0";
+            pb9.Click += pb1_Click;
             // 
             // pb7
             // 
-            pb7.Image = Properties.Resources.Memory_Game_;
+            pb7.Image = (Image)resources.GetObject("pb7.Image");
             pb7.Location = new Point(99, 272);
             pb7.Name = "pb7";
             pb7.Size = new Size(82, 73);
             pb7.SizeMode = PictureBoxSizeMode.StretchImage;
             pb7.TabIndex = 9;
             pb7.TabStop = false;
+            pb7.Tag = "0";
+            pb7.Click += pb1_Click;
             // 
             // label4
             // 
