@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             pictureBox1 = new PictureBox();
             button1 = new Button();
@@ -52,6 +53,8 @@
             pbHeart3 = new PictureBox();
             pbHeart6 = new PictureBox();
             pbHeart5 = new PictureBox();
+            tmrDelay = new System.Windows.Forms.Timer(components);
+            tmrHeart = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pb1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pb3).BeginInit();
@@ -347,6 +350,16 @@
             pbHeart5.TabIndex = 23;
             pbHeart5.TabStop = false;
             // 
+            // tmrDelay
+            // 
+            tmrDelay.Interval = 2000;
+            tmrDelay.Tick += tmrDelay_Tick;
+            // 
+            // tmrHeart
+            // 
+            tmrHeart.Interval = 200;
+            tmrHeart.Tick += tmrHeart_Tick;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -430,5 +443,7 @@
         private PictureBox pbHeart3;
         private PictureBox pbHeart6;
         private PictureBox pbHeart5;
+        private System.Windows.Forms.Timer tmrDelay;
+        private System.Windows.Forms.Timer tmrHeart;
     }
 }

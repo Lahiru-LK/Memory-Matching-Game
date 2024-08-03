@@ -1,3 +1,5 @@
+using System;
+
 namespace Memory_Matching_Game
 {
     public partial class Form1 : Form
@@ -13,6 +15,7 @@ namespace Memory_Matching_Game
 
         int previousIndexOpen;
         bool hasOpenCard = false;
+        int LifeUsed = 0;
 
 
 
@@ -172,15 +175,17 @@ namespace Memory_Matching_Game
                         pb.Image = CardImages.ElementAt(index).Value;
 
                     }
+                    cardSelectedIndex = index;
 
                     if (isMatch)
                     {
-                        //revert thr card
-                        CardsPictureBoxe[previousIndexOpen].Image = CardsPictureBoxe[index].Image = Properties.Resources.Back_card;
-                        CardsPictureBoxe[previousIndexOpen].Tag = 0;
-
+                        //timer will tick
+                        //Interval is 2000 equivalent to 2 seconds
                         //Visual show it ti user , we will add delay here so user can see the card before it revert back to back card
                         //achive this , we will use timer control
+
+                        tmrHeart.Enabled = true;
+                        tmrDelay.Enabled = true;
 
 
                     }
@@ -204,6 +209,20 @@ namespace Memory_Matching_Game
             }
         }
 
+        int cardSelectedIndex;
+        private void tmrDelay_Tick(object sender, EventArgs e)
+        {
+            //one tick is disabled, we will revert the card
+            tmrDelay.Enabled = false;
+            //revert thr card
+            CardsPictureBoxe[previousIndexOpen].Image = CardsPictureBoxe[cardSelectedIndex].Image = Properties.Resources.Back_card;
+            CardsPictureBoxe[previousIndexOpen].Tag = 0;
+        }
+
+        private void tmrHeart_Tick(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
