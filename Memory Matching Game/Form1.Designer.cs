@@ -110,9 +110,9 @@
             label1.FlatStyle = FlatStyle.Popup;
             label1.Location = new Point(177, 497);
             label1.Name = "label1";
-            label1.Size = new Size(104, 22);
+            label1.Size = new Size(92, 22);
             label1.TabIndex = 2;
-            label1.Text = "Time Left : 30 ";
+            label1.Text = "Time Left : 0";
             label1.Click += label1_Click;
             // 
             // pb1
