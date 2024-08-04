@@ -1,67 +1,61 @@
 using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace Memory_Matching_Game
 {
     public partial class Form1 : Form
     {
-        //Dictionary to store the images
-
+        // Dictionary to store the images
         Dictionary<string, Image> CardImages = new Dictionary<string, Image>();
 
-        //List to store the picture boxes
-
-        List<PictureBox> CardsPictureBoxe = new List<PictureBox>();
-        List<PictureBox> LifePictureBoxe = new List<PictureBox>();
+        // List to store the picture boxes
+        List<PictureBox> CardsPictureBoxes = new List<PictureBox>();
+        List<PictureBox> LifePictureBoxes = new List<PictureBox>();
 
         int previousIndexOpen;
         bool hasOpenCard = false;
         int LifeUsed = 0;
         int UserPoints = 0;
-
-
+        int cardSelectedIndex;
 
         public Form1()
         {
             InitializeComponent();
             LoadImages();
 
-            //we can call Randomize() method to randomize the images
-            Randomize();
-            Randomize();
+            // Call Randomize() method to randomize the images
             Randomize();
 
-            CardsPictureBoxe.Add(pb1);
-            CardsPictureBoxe.Add(pb2);
-            CardsPictureBoxe.Add(pb3);
-            CardsPictureBoxe.Add(pb4);
-            CardsPictureBoxe.Add(pb5);
-            CardsPictureBoxe.Add(pb6);
-            CardsPictureBoxe.Add(pb7);
-            CardsPictureBoxe.Add(pb8);
-            CardsPictureBoxe.Add(pb9);
-            CardsPictureBoxe.Add(pb10);
-            CardsPictureBoxe.Add(pb11);
-            CardsPictureBoxe.Add(pb12);
+            // Add picture boxes to the list
+            CardsPictureBoxes.Add(pb1);
+            CardsPictureBoxes.Add(pb2);
+            CardsPictureBoxes.Add(pb3);
+            CardsPictureBoxes.Add(pb4);
+            CardsPictureBoxes.Add(pb5);
+            CardsPictureBoxes.Add(pb6);
+            CardsPictureBoxes.Add(pb7);
+            CardsPictureBoxes.Add(pb8);
+            CardsPictureBoxes.Add(pb9);
+            CardsPictureBoxes.Add(pb10);
+            CardsPictureBoxes.Add(pb11);
+            CardsPictureBoxes.Add(pb12);
 
-            LifePictureBoxe.Add(pbHeart6);
-            LifePictureBoxe.Add(pbHeart5);
-            LifePictureBoxe.Add(pbHeart4);
-            LifePictureBoxe.Add(pbHeart3);
-            LifePictureBoxe.Add(pbHeart2);
-            LifePictureBoxe.Add(pbHeart1);
-
-
-
-
-
-
+            LifePictureBoxes.Add(pbHeart6);
+            LifePictureBoxes.Add(pbHeart5);
+            LifePictureBoxes.Add(pbHeart4);
+            LifePictureBoxes.Add(pbHeart3);
+            LifePictureBoxes.Add(pbHeart2);
+            LifePictureBoxes.Add(pbHeart1);
         }
 
-        //Load the images into the dictionary
-
+        // Load the images into the dictionary
         private void LoadImages()
         {
-            //in this game, we have 7 images, we will load 2 of each image
+            // In this game, we have 6 images, we will load 2 of each image
             CardImages.Add("im1", Properties.Resources.im1);
             CardImages.Add("im2", Properties.Resources.im2);
             CardImages.Add("im3", Properties.Resources.im3);
@@ -69,77 +63,43 @@ namespace Memory_Matching_Game
             CardImages.Add("im5", Properties.Resources.im5);
             CardImages.Add("im6", Properties.Resources.im6);
 
-            //sinc we are creating memory game ti insert tawince of each image, but we need to change their ID
-
+            // Insert duplicates for each image
             CardImages.Add("im1_DUP", Properties.Resources.im1);
             CardImages.Add("im2_DUP", Properties.Resources.im2);
             CardImages.Add("im3_DUP", Properties.Resources.im3);
             CardImages.Add("im4_DUP", Properties.Resources.im4);
             CardImages.Add("im5_DUP", Properties.Resources.im5);
             CardImages.Add("im6_DUP", Properties.Resources.im6);
-
-
         }
 
-        //Randomize the images
-
+        // Randomize the images
         private void Randomize()
         {
-            //Let's random the images in that we wull use
-
+            // Temporarily store images in a new dictionary
             Dictionary<string, Image> imgTmp = new Dictionary<string, Image>();
 
-            while (CardImages.Count > 0)
+            Random rnd = new Random();
+            var keys = CardImages.Keys.ToList();
+
+            while (keys.Count > 0)
             {
-
-                //select a random image
-                Random rnd = new Random();
-                int index = rnd.Next(0, CardImages.Count - 1);
-                string key = CardImages.ElementAt(index).Key;
-                imgTmp.Add(key, CardImages.ElementAt(index).Value);
-                CardImages.Remove(key);
-
-                //just add sleep of 20ms every loop
-                System.Threading.Thread.Sleep(20);
+                // Select a random image
+                int index = rnd.Next(keys.Count);
+                string key = keys[index];
+                imgTmp.Add(key, CardImages[key]);
+                keys.RemoveAt(index);
             }
 
-            foreach (var item in imgTmp)
-            {
-                CardImages.Add(item.Key, item.Value);
-
-            }
-
-
-        }
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            // Add code to handle the click event on pictureBox1
-            MessageBox.Show("PictureBox1 clicked!");
+            CardImages = imgTmp;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            // Add code to handle the click event on button1
-            MessageBox.Show("Restart button clicked!");
-        }
+        private void pictureBox1_Click(object sender, EventArgs e) { }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-            // Add code to handle the click event on label1
-            MessageBox.Show("Label1 clicked!");
-        }
+        private void label1_Click(object sender, EventArgs e) { }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-            // Add code to handle the click event on label4
-            MessageBox.Show("Label4 clicked!");
-        }
+        private void label4_Click(object sender, EventArgs e) { }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-            // Add code to handle the click event on label5
-            MessageBox.Show("Label5 clicked!");
-        }
+        private void label5_Click(object sender, EventArgs e) { }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -148,111 +108,157 @@ namespace Memory_Matching_Game
         }
 
 
-
-
         private void pb1_Click(object sender, EventArgs e)
         {
+            if (tmrHeart.Enabled)
+                return;
+
             PictureBox pb = (PictureBox)sender;
 
-            //0 means the pb is turn off, we will open it and check if user guessed the correct cards
+            // 0 means the pb is turned off, we will open it and check if the user guessed the correct cards
             if (pb.Tag.ToString() == "0")
             {
-                int index = CardsPictureBoxe.IndexOf(pb);
-                //mean user has already selected the 1st image, need to compare  if thet are same
+                int index = CardsPictureBoxes.IndexOf(pb);
 
+                // Means the user has already selected the 1st image, need to compare if they are the same
                 if (hasOpenCard)
                 {
-                    string previouseImageId = CardImages.ElementAt(previousIndexOpen).Key;
+                    string previousImageId = CardImages.ElementAt(previousIndexOpen).Key;
                     string currentImageId = CardImages.ElementAt(index).Key;
                     bool isMatch = false;
 
-                    //check if they have same ID
-                    if (previouseImageId.Replace("_DUP", "") == currentImageId.Replace("_DUP", ""))
+                    // Check if they have the same ID
+                    if (previousImageId.Replace("_DUP", "") == currentImageId.Replace("_DUP", ""))
                     {
-                        //remove _DUP  so they can match if they are same
-
+                        // Remove _DUP so they can match if they are the same
                         isMatch = true;
-                        pb.Tag = 1;
+                        pb.Tag = "1";
                         pb.Image = CardImages.ElementAt(index).Value;
                         UserPoints++;
                         lblPoints.Text = UserPoints.ToString();
 
-                        //add validation if user already guessed all the cards
-                        if(UserPoints == 10)
+                        // Validate if the user has guessed all the cards
+                        if (UserPoints == 6)
                         {
                             MessageBox.Show("Congratulations! You Finished this game");
+                            LifeUsed = 0;
+                            UserPoints = 0;
+                            lblPoints.Text = "0";
+                            ResetLife();
+                            ShuffleImages();
+                            ResetCards();
                         }
-
                     }
                     cardSelectedIndex = index;
 
-                    if (isMatch)
+                    if (!isMatch)
                     {
-                        //timer will tick
-                        //Interval is 2000 equivalent to 2 seconds
-                        //Visual show it ti user , we will add delay here so user can see the card before it revert back to back card
-                        //achive this , we will use timer control
-
+                        // Show the card and start the timer to revert back if not matched
+                        pb.Tag = "1";
+                        pb.Image = CardImages.ElementAt(index).Value;
                         tmrHeart.Enabled = true;
                         tmrDelay.Enabled = true;
-
-
                     }
-
-
-
-
                 }
                 else
                 {
-                    //means this picturebox us already open, next time user click 
+                    // Means this picturebox is already open, next time the user clicks
                     pb.Tag = "1";
                     previousIndexOpen = index;
                     pb.Image = CardImages.ElementAt(index).Value;
-
-
                 }
-                //reverse the vale of this flag
+
+                // Reverse the value of this flag
                 hasOpenCard = !hasOpenCard;
-
-
             }
         }
 
-        int cardSelectedIndex;
+
         private void tmrDelay_Tick(object sender, EventArgs e)
         {
-            //one tick is disabled, we will revert the card
+            // One tick is disabled, we will revert the card
             tmrDelay.Enabled = false;
-            //revert thr card
-            CardsPictureBoxe[previousIndexOpen].Image = CardsPictureBoxe[cardSelectedIndex].Image = Properties.Resources.Back_card;
-            CardsPictureBoxe[previousIndexOpen].Tag = 0;
-        }
 
-        int heartTimer = 10;
-
-        private void tmrHeart_Tick(object sender, EventArgs e)
-        {
-            //this will make the heart blinking effect
-            LifePictureBoxe[LifeUsed].Visible = !LifePictureBoxe[LifeUsed].Visible;
-
-            heartTimer--;
-            if (heartTimer < 0)
+            if (CardsPictureBoxes[previousIndexOpen].Tag.ToString() == "1" && CardsPictureBoxes[cardSelectedIndex].Tag.ToString() == "1")
             {
-                tmrHeart.Enabled = false;
-                heartTimer = 10;
-                LifePictureBoxe[LifeUsed].Visible = true;
+                // Revert the cards if they don't match
+                CardsPictureBoxes[previousIndexOpen].Image = Properties.Resources.Back_card;
+                CardsPictureBoxes[cardSelectedIndex].Image = Properties.Resources.Back_card;
+                CardsPictureBoxes[previousIndexOpen].Tag = "0";
+                CardsPictureBoxes[cardSelectedIndex].Tag = "0";
+
+                // Inform the user that the cards do not match
+                MessageBox.Show("The cards do not match!");
+
+                // Increase the life used if the cards do not match
+                LifePictureBoxes[LifeUsed].Visible = false;
                 LifeUsed++;
                 if (LifeUsed == 6)
                 {
                     MessageBox.Show("Game Over! You have used all your lives");
                     Application.Exit();
                 }
-               
+            }
+        }
+
+        int heartTimer = 10;
+
+        private void tmrHeart_Tick(object sender, EventArgs e)
+        {
+            // This will make the heart blinking effect
+            LifePictureBoxes[LifeUsed].Visible = !LifePictureBoxes[LifeUsed].Visible;
+
+            heartTimer--;
+            if (heartTimer < 0)
+            {
+                tmrHeart.Enabled = false;
+                heartTimer = 10;
+                LifePictureBoxes[LifeUsed].Visible = true;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LifeUsed = 0;
+            UserPoints = 0;
+            lblPoints.Text = "0";
+            ResetLife();
+            ShuffleImages();
+            ResetCards();
+        }
+
+        private void ResetCards()
+        {
+            foreach (var pb in CardsPictureBoxes)
+            {
+                pb.Tag = "0";
+                pb.Image = Properties.Resources.Back_card;
+            }
+        }
+
+        private void ResetLife()
+        {
+            foreach (var item in LifePictureBoxes)
+            {
+                item.Visible = true;
+            }
+        }
+
+        private void ShuffleImages()
+        {
+            Randomize();
+            AssignImagesToCards();
+        }
+
+        private void AssignImagesToCards()
+        {
+            int index = 0;
+            foreach (var pb in CardsPictureBoxes)
+            {
+                pb.Tag = CardImages.ElementAt(index).Key;
+                pb.Image = Properties.Resources.Back_card; // Initially, all images are set to the back card image
+                index++;
             }
         }
     }
 }
-
-
-
