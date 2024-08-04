@@ -46,7 +46,7 @@
             pb9 = new PictureBox();
             pb7 = new PictureBox();
             label4 = new Label();
-            lblPoints = new Label();
+            lblPointsName = new Label();
             pbHeart1 = new PictureBox();
             pbHeart2 = new PictureBox();
             pbHeart4 = new PictureBox();
@@ -55,6 +55,7 @@
             pbHeart5 = new PictureBox();
             tmrDelay = new System.Windows.Forms.Timer(components);
             tmrHeart = new System.Windows.Forms.Timer(components);
+            lblPoints = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pb1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pb3).BeginInit();
@@ -271,18 +272,18 @@
             label4.Text = "Life : ";
             label4.Click += label4_Click;
             // 
-            // lblPoints
+            // lblPointsName
             // 
-            lblPoints.AutoSize = true;
-            lblPoints.BorderStyle = BorderStyle.Fixed3D;
-            lblPoints.Cursor = Cursors.No;
-            lblPoints.FlatStyle = FlatStyle.Popup;
-            lblPoints.Location = new Point(105, 436);
-            lblPoints.Name = "lblPoints";
-            lblPoints.Size = new Size(63, 22);
-            lblPoints.TabIndex = 18;
-            lblPoints.Text = "Point : 0";
-            lblPoints.Click += label5_Click;
+            lblPointsName.AutoSize = true;
+            lblPointsName.BorderStyle = BorderStyle.Fixed3D;
+            lblPointsName.Cursor = Cursors.No;
+            lblPointsName.FlatStyle = FlatStyle.Popup;
+            lblPointsName.Location = new Point(105, 436);
+            lblPointsName.Name = "lblPointsName";
+            lblPointsName.Size = new Size(55, 22);
+            lblPointsName.TabIndex = 18;
+            lblPointsName.Text = "Point : ";
+            lblPointsName.Click += label5_Click;
             // 
             // pbHeart1
             // 
@@ -360,19 +361,32 @@
             tmrHeart.Interval = 200;
             tmrHeart.Tick += tmrHeart_Tick;
             // 
+            // lblPoints
+            // 
+            lblPoints.AutoSize = true;
+            lblPoints.BorderStyle = BorderStyle.Fixed3D;
+            lblPoints.Cursor = Cursors.No;
+            lblPoints.FlatStyle = FlatStyle.Popup;
+            lblPoints.Location = new Point(157, 436);
+            lblPoints.Name = "lblPoints";
+            lblPoints.Size = new Size(19, 22);
+            lblPoints.TabIndex = 25;
+            lblPoints.Text = "0";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.GhostWhite;
             ClientSize = new Size(452, 651);
+            Controls.Add(lblPoints);
             Controls.Add(pbHeart6);
             Controls.Add(pbHeart5);
             Controls.Add(pbHeart4);
             Controls.Add(pbHeart3);
             Controls.Add(pbHeart2);
             Controls.Add(pbHeart1);
-            Controls.Add(lblPoints);
+            Controls.Add(lblPointsName);
             Controls.Add(label4);
             Controls.Add(pb11);
             Controls.Add(pb12);
@@ -436,7 +450,7 @@
         private PictureBox pb9;
         private PictureBox pb7;
         private Label label4;
-        private Label lblPoints;
+        private Label lblPointsName;
         private PictureBox pbHeart1;
         private PictureBox pbHeart2;
         private PictureBox pbHeart4;
@@ -445,5 +459,6 @@
         private PictureBox pbHeart5;
         private System.Windows.Forms.Timer tmrDelay;
         private System.Windows.Forms.Timer tmrHeart;
+        private Label lblPoints;
     }
 }
