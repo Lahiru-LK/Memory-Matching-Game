@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace Memory_Matching_Game
@@ -21,6 +20,9 @@ namespace Memory_Matching_Game
         int LifeUsed = 0;
         int UserPoints = 0;
         int cardSelectedIndex;
+
+        int timeLeft = 60; // Add this line
+        System.Windows.Forms.Timer gameTimer; // Declare the timer with full namespace
 
         public Form1()
         {
@@ -50,6 +52,15 @@ namespace Memory_Matching_Game
             LifePictureBoxes.Add(pbHeart3);
             LifePictureBoxes.Add(pbHeart2);
             LifePictureBoxes.Add(pbHeart1);
+
+            // Initialize the timer
+            gameTimer = new System.Windows.Forms.Timer();
+            gameTimer.Interval = 1000; // 1 second intervals
+            gameTimer.Tick += timer_Left_Tick;
+            gameTimer.Start();
+
+            // Initialize the TimeLeftCount label
+            TimeLeftCount.Text = timeLeft.ToString();
         }
 
         // Load the images into the dictionary
@@ -107,7 +118,6 @@ namespace Memory_Matching_Game
             MessageBox.Show("Form loaded!");
         }
 
-
         private void pb1_Click(object sender, EventArgs e)
         {
             if (tmrHeart.Enabled)
@@ -144,9 +154,11 @@ namespace Memory_Matching_Game
                             LifeUsed = 0;
                             UserPoints = 0;
                             lblPoints.Text = "0";
+                            TimeLeftCount.Text = "60";
                             ResetLife();
                             ShuffleImages();
                             ResetCards();
+                            gameTimer.Stop(); // Stop the timer
                         }
                     }
                     cardSelectedIndex = index;
@@ -172,7 +184,6 @@ namespace Memory_Matching_Game
                 hasOpenCard = !hasOpenCard;
             }
         }
-
 
         private void tmrDelay_Tick(object sender, EventArgs e)
         {
@@ -222,9 +233,13 @@ namespace Memory_Matching_Game
             LifeUsed = 0;
             UserPoints = 0;
             lblPoints.Text = "0";
+            TimeLeftCount.Text = "60";
             ResetLife();
             ShuffleImages();
             ResetCards();
+            timeLeft = 60; // Reset the timer
+            TimeLeftCount.Text = timeLeft.ToString();
+            gameTimer.Start(); // Restart the timer
         }
 
         private void ResetCards()
@@ -258,6 +273,21 @@ namespace Memory_Matching_Game
                 pb.Tag = CardImages.ElementAt(index).Key;
                 pb.Image = Properties.Resources.Back_card; // Initially, all images are set to the back card image
                 index++;
+            }
+        }
+
+        private void timer_Left_Tick(object sender, EventArgs e)
+        {
+            if (timeLeft > 0)
+            {
+                timeLeft--;
+                TimeLeftCount.Text = timeLeft.ToString();
+            }
+            else
+            {
+                gameTimer.Stop();
+                MessageBox.Show("Time's up! Game Over!");
+                Application.Exit();
             }
         }
     }
