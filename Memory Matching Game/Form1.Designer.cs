@@ -46,7 +46,7 @@
             pb9 = new PictureBox();
             pb7 = new PictureBox();
             label4 = new Label();
-            label5 = new Label();
+            lblPoints = new Label();
             pbHeart1 = new PictureBox();
             pbHeart2 = new PictureBox();
             pbHeart4 = new PictureBox();
@@ -271,18 +271,18 @@
             label4.Text = "Life : ";
             label4.Click += label4_Click;
             // 
-            // label5
+            // lblPoints
             // 
-            label5.AutoSize = true;
-            label5.BorderStyle = BorderStyle.Fixed3D;
-            label5.Cursor = Cursors.No;
-            label5.FlatStyle = FlatStyle.Popup;
-            label5.Location = new Point(105, 436);
-            label5.Name = "label5";
-            label5.Size = new Size(63, 22);
-            label5.TabIndex = 18;
-            label5.Text = "Point : 0";
-            label5.Click += label5_Click;
+            lblPoints.AutoSize = true;
+            lblPoints.BorderStyle = BorderStyle.Fixed3D;
+            lblPoints.Cursor = Cursors.No;
+            lblPoints.FlatStyle = FlatStyle.Popup;
+            lblPoints.Location = new Point(105, 436);
+            lblPoints.Name = "lblPoints";
+            lblPoints.Size = new Size(63, 22);
+            lblPoints.TabIndex = 18;
+            lblPoints.Text = "Point : 0";
+            lblPoints.Click += label5_Click;
             // 
             // pbHeart1
             // 
@@ -372,7 +372,7 @@
             Controls.Add(pbHeart3);
             Controls.Add(pbHeart2);
             Controls.Add(pbHeart1);
-            Controls.Add(label5);
+            Controls.Add(lblPoints);
             Controls.Add(label4);
             Controls.Add(pb11);
             Controls.Add(pb12);
@@ -436,7 +436,7 @@
         private PictureBox pb9;
         private PictureBox pb7;
         private Label label4;
-        private Label label5;
+        private Label lblPoints;
         private PictureBox pbHeart1;
         private PictureBox pbHeart2;
         private PictureBox pbHeart4;
