@@ -16,6 +16,7 @@ namespace Memory_Matching_Game
         int previousIndexOpen;
         bool hasOpenCard = false;
         int LifeUsed = 0;
+        int UserPoints = 0;
 
 
 
@@ -173,6 +174,14 @@ namespace Memory_Matching_Game
                         isMatch = true;
                         pb.Tag = 1;
                         pb.Image = CardImages.ElementAt(index).Value;
+                        UserPoints++;
+                        lblPoints.Text = UserPoints.ToString();
+
+                        //add validation if user already guessed all the cards
+                        if(UserPoints == 10)
+                        {
+                            MessageBox.Show("Congratulations! You Finished this game");
+                        }
 
                     }
                     cardSelectedIndex = index;
@@ -189,6 +198,7 @@ namespace Memory_Matching_Game
 
 
                     }
+
 
 
 
@@ -219,9 +229,27 @@ namespace Memory_Matching_Game
             CardsPictureBoxe[previousIndexOpen].Tag = 0;
         }
 
+        int heartTimer = 10;
+
         private void tmrHeart_Tick(object sender, EventArgs e)
         {
+            //this will make the heart blinking effect
+            LifePictureBoxe[LifeUsed].Visible = !LifePictureBoxe[LifeUsed].Visible;
 
+            heartTimer--;
+            if (heartTimer < 0)
+            {
+                tmrHeart.Enabled = false;
+                heartTimer = 10;
+                LifePictureBoxe[LifeUsed].Visible = true;
+                LifeUsed++;
+                if (LifeUsed == 6)
+                {
+                    MessageBox.Show("Game Over! You have used all your lives");
+                    Application.Exit();
+                }
+               
+            }
         }
     }
 }
