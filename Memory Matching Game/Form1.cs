@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using System.Media; // Import the System.Media namespace
 
 namespace Memory_Matching_Game
 {
@@ -23,6 +24,9 @@ namespace Memory_Matching_Game
 
         int timeLeft = 60; // Add this line
         System.Windows.Forms.Timer gameTimer; // Declare the timer with full namespace
+
+        SoundPlayer backgroundMusicPlayer; // Declare the SoundPlayer for background music
+        SoundPlayer clickSoundPlayer; // Declare the SoundPlayer for click sound
 
         public Form1()
         {
@@ -61,6 +65,13 @@ namespace Memory_Matching_Game
 
             // Initialize the TimeLeftCount label
             TimeLeftCount.Text = timeLeft.ToString();
+
+            // Initialize and start the background music player
+            backgroundMusicPlayer = new SoundPlayer("C:\\Users\\PC\\Desktop\\Memory-Matching-Game\\Memory Matching Game\\Resources\\background_music.wav");
+            backgroundMusicPlayer.PlayLooping(); // Play the music in a loop
+
+            // Initialize the click sound player
+            clickSoundPlayer = new SoundPlayer("C:\\Users\\PC\\Desktop\\Memory-Matching-Game\\Memory Matching Game\\Resources\\click_sound_01.wav");
         }
 
         // Load the images into the dictionary
@@ -124,6 +135,9 @@ namespace Memory_Matching_Game
                 return;
 
             PictureBox pb = (PictureBox)sender;
+
+            // Play the click sound
+            clickSoundPlayer.Play();
 
             // 0 means the pb is turned off, we will open it and check if the user guessed the correct cards
             if (pb.Tag.ToString() == "0")
@@ -240,6 +254,8 @@ namespace Memory_Matching_Game
             timeLeft = 60; // Reset the timer
             TimeLeftCount.Text = timeLeft.ToString();
             gameTimer.Start(); // Restart the timer
+            //music callings
+            backgroundMusicPlayer.Play();
         }
 
         private void ResetCards()
