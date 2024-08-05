@@ -124,89 +124,87 @@ namespace Memory_Matching_Game
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // Add code to handle the load event of the form
-            MessageBox.Show("Form loaded!");
+          
         }
 
-       private void pb1_Click(object sender, EventArgs e)
-{
-    if (tmrHeart.Enabled)
-        return;
-
-    PictureBox pb = (PictureBox)sender;
-
-    // Play the click sound using a new SoundPlayer instance
-    using (SoundPlayer clickSoundPlayer = new SoundPlayer("C:\\Users\\PC\\Desktop\\Memory-Matching-Game\\Memory Matching Game\\Resources\\click_sound_01.wav"))
-    {
-        clickSoundPlayer.Play();
-    }
-
-    // 0 means the pb is turned off, we will open it and check if the user guessed the correct cards
-    if (pb.Tag.ToString() == "0")
-    {
-        int index = CardsPictureBoxes.IndexOf(pb);
-
-        // Means the user has already selected the 1st image, need to compare if they are the same
-        if (hasOpenCard)
+        private void pb1_Click(object sender, EventArgs e)
         {
-            string previousImageId = CardImages.ElementAt(previousIndexOpen).Key;
-            string currentImageId = CardImages.ElementAt(index).Key;
-            bool isMatch = false;
+            if (tmrHeart.Enabled)
+                return;
 
-            // Check if they have the same ID
-            if (previousImageId.Replace("_DUP", "") == currentImageId.Replace("_DUP", ""))
+            PictureBox pb = (PictureBox)sender;
+
+            // Play the click sound using a new SoundPlayer instance
+            using (SoundPlayer clickSoundPlayer = new SoundPlayer("C:\\Users\\PC\\Desktop\\Memory-Matching-Game\\Memory Matching Game\\Resources\\click_sound_01.wav"))
             {
-                // Remove _DUP so they can match if they are the same
-                isMatch = true;
-                pb.Tag = "1";
-                pb.Image = CardImages.ElementAt(index).Value;
-                UserPoints++;
-                lblPoints.Text = UserPoints.ToString();
+                clickSoundPlayer.Play();
+            }
 
-                // Play the match sound using a new SoundPlayer instance
-                using (SoundPlayer matchSoundPlayer = new SoundPlayer("C:\\Users\\PC\\Desktop\\Memory-Matching-Game\\Memory Matching Game\\Resources\\match_image.wav"))
+            // 0 means the pb is turned off, we will open it and check if the user guessed the correct cards
+            if (pb.Tag.ToString() == "0")
+            {
+                int index = CardsPictureBoxes.IndexOf(pb);
+
+                // Means the user has already selected the 1st image, need to compare if they are the same
+                if (hasOpenCard)
                 {
-                    matchSoundPlayer.Play();
+                    string previousImageId = CardImages.ElementAt(previousIndexOpen).Key;
+                    string currentImageId = CardImages.ElementAt(index).Key;
+                    bool isMatch = false;
+
+                    // Check if they have the same ID
+                    if (previousImageId.Replace("_DUP", "") == currentImageId.Replace("_DUP", ""))
+                    {
+                        // Remove _DUP so they can match if they are the same
+                        isMatch = true;
+                        pb.Tag = "1";
+                        pb.Image = CardImages.ElementAt(index).Value;
+                        UserPoints++;
+                        lblPoints.Text = UserPoints.ToString();
+
+                        // Play the match sound using a new SoundPlayer instance
+                        using (SoundPlayer matchSoundPlayer = new SoundPlayer("C:\\Users\\PC\\Desktop\\Memory-Matching-Game\\Memory Matching Game\\Resources\\match_image.wav"))
+                        {
+                            matchSoundPlayer.Play();
+                        }
+
+                        // Validate if the user has guessed all the cards
+                        if (UserPoints == 6)
+                        {
+                            MessageBox.Show("Congratulations! You Finished this game");
+                            LifeUsed = 0;
+                            UserPoints = 0;
+                            lblPoints.Text = "0";
+                            TimeLeftCount.Text = "60";
+                            ResetLife();
+                            ShuffleImages();
+                            ResetCards();
+                            gameTimer.Stop(); // Stop the timer
+                        }
+                    }
+                    cardSelectedIndex = index;
+
+                    if (!isMatch)
+                    {
+                        // Show the card and start the timer to revert back if not matched
+                        pb.Tag = "1";
+                        pb.Image = CardImages.ElementAt(index).Value;
+                        tmrHeart.Enabled = true;
+                        tmrDelay.Enabled = true;
+                    }
+                }
+                else
+                {
+                    // Means this picturebox is already open, next time the user clicks
+                    pb.Tag = "1";
+                    previousIndexOpen = index;
+                    pb.Image = CardImages.ElementAt(index).Value;
                 }
 
-                // Validate if the user has guessed all the cards
-                if (UserPoints == 6)
-                {
-                    MessageBox.Show("Congratulations! You Finished this game");
-                    LifeUsed = 0;
-                    UserPoints = 0;
-                    lblPoints.Text = "0";
-                    TimeLeftCount.Text = "60";
-                    ResetLife();
-                    ShuffleImages();
-                    ResetCards();
-                    gameTimer.Stop(); // Stop the timer
-                }
-            }
-            cardSelectedIndex = index;
-
-            if (!isMatch)
-            {
-                // Show the card and start the timer to revert back if not matched
-                pb.Tag = "1";
-                pb.Image = CardImages.ElementAt(index).Value;
-                tmrHeart.Enabled = true;
-                tmrDelay.Enabled = true;
+                // Reverse the value of this flag
+                hasOpenCard = !hasOpenCard;
             }
         }
-        else
-        {
-            // Means this picturebox is already open, next time the user clicks
-            pb.Tag = "1";
-            previousIndexOpen = index;
-            pb.Image = CardImages.ElementAt(index).Value;
-        }
-
-        // Reverse the value of this flag
-        hasOpenCard = !hasOpenCard;
-    }
-}
-
 
         private void tmrDelay_Tick(object sender, EventArgs e)
         {
@@ -221,6 +219,12 @@ namespace Memory_Matching_Game
                 CardsPictureBoxes[previousIndexOpen].Tag = "0";
                 CardsPictureBoxes[cardSelectedIndex].Tag = "0";
 
+                // Play the not match sound using a new SoundPlayer instance
+                using (SoundPlayer notMatchSoundPlayer = new SoundPlayer("C:\\Users\\PC\\Desktop\\Memory-Matching-Game\\Memory Matching Game\\Resources\\notMatch_image.wav"))
+                {
+                    notMatchSoundPlayer.Play();
+                }
+
                 // Inform the user that the cards do not match
                 MessageBox.Show("The cards do not match!");
 
@@ -229,6 +233,12 @@ namespace Memory_Matching_Game
                 LifeUsed++;
                 if (LifeUsed == 6)
                 {
+                    // Play the game over sound using a new SoundPlayer instance
+                    using (SoundPlayer gameOverSoundPlayer = new SoundPlayer("C:\\Users\\PC\\Desktop\\Memory-Matching-Game\\Memory Matching Game\\Resources\\gameTimeEnd.wav"))
+                    {
+                        gameOverSoundPlayer.Play();
+                    }
+
                     MessageBox.Show("Game Over! You have used all your lives");
                     Application.Exit();
                 }
@@ -311,6 +321,13 @@ namespace Memory_Matching_Game
             else
             {
                 gameTimer.Stop();
+
+                // Play the time end sound using a new SoundPlayer instance
+                using (SoundPlayer timeEndSoundPlayer = new SoundPlayer("C:\\Users\\PC\\Desktop\\Memory-Matching-Game\\Memory Matching Game\\Resources\\gameTimeEnd.wav"))
+                {
+                    timeEndSoundPlayer.Play();
+                }
+
                 MessageBox.Show("Time's up! Game Over!");
                 Application.Exit();
             }
