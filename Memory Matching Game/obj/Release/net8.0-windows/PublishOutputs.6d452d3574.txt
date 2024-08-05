@@ -1,0 +1,7 @@
+C:\Users\PC\Desktop\Memory Matching Game\Memory Matching Game.exe
+C:\Users\PC\Desktop\Memory Matching Game\Memory Matching Game.dll
+C:\Users\PC\Desktop\Memory Matching Game\Memory Matching Game.deps.json
+C:\Users\PC\Desktop\Memory Matching Game\Memory Matching Game.runtimeconfig.json
+C:\Users\PC\Desktop\Memory Matching Game\Memory Matching Game.pdb
+C:\Users\PC\Desktop\Memory Matching Game\Interop.WMPLib.dll
+C:\Users\PC\Desktop\Memory Matching Game\AxInterop.WMPLib.dll
