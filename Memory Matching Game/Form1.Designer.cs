@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             pictureBox1 = new PictureBox();
             button1 = new Button();
-            label1 = new Label();
+            TimeLeftCount1 = new Label();
             pb1 = new PictureBox();
             pb3 = new PictureBox();
             pb2 = new PictureBox();
@@ -56,6 +56,8 @@
             tmrDelay = new System.Windows.Forms.Timer(components);
             tmrHeart = new System.Windows.Forms.Timer(components);
             lblPoints = new Label();
+            timer_Left = new System.Windows.Forms.Timer(components);
+            TimeLeftCount = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pb1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pb3).BeginInit();
@@ -79,6 +81,7 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Cursor = Cursors.No;
             pictureBox1.Dock = DockStyle.Fill;
             pictureBox1.Image = Properties.Resources.Space_Memory_Game_Worksheet;
             pictureBox1.Location = new Point(0, 0);
@@ -102,18 +105,18 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
-            // label1
+            // TimeLeftCount1
             // 
-            label1.AutoSize = true;
-            label1.BorderStyle = BorderStyle.Fixed3D;
-            label1.Cursor = Cursors.No;
-            label1.FlatStyle = FlatStyle.Popup;
-            label1.Location = new Point(177, 497);
-            label1.Name = "label1";
-            label1.Size = new Size(104, 22);
-            label1.TabIndex = 2;
-            label1.Text = "Time Left : 30 ";
-            label1.Click += label1_Click;
+            TimeLeftCount1.AutoSize = true;
+            TimeLeftCount1.BorderStyle = BorderStyle.Fixed3D;
+            TimeLeftCount1.Cursor = Cursors.No;
+            TimeLeftCount1.FlatStyle = FlatStyle.Popup;
+            TimeLeftCount1.Location = new Point(177, 497);
+            TimeLeftCount1.Name = "TimeLeftCount1";
+            TimeLeftCount1.Size = new Size(100, 22);
+            TimeLeftCount1.TabIndex = 2;
+            TimeLeftCount1.Text = "Time Left : 60";
+            TimeLeftCount1.Click += label1_Click;
             // 
             // pb1
             // 
@@ -373,12 +376,29 @@
             lblPoints.TabIndex = 25;
             lblPoints.Text = "0";
             // 
+            // timer_Left
+            // 
+            timer_Left.Tick += timer_Left_Tick;
+            // 
+            // TimeLeftCount
+            // 
+            TimeLeftCount.AutoSize = true;
+            TimeLeftCount.BorderStyle = BorderStyle.Fixed3D;
+            TimeLeftCount.Cursor = Cursors.No;
+            TimeLeftCount.FlatStyle = FlatStyle.Popup;
+            TimeLeftCount.Location = new Point(251, 497);
+            TimeLeftCount.Name = "TimeLeftCount";
+            TimeLeftCount.Size = new Size(27, 22);
+            TimeLeftCount.TabIndex = 26;
+            TimeLeftCount.Text = "60";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.GhostWhite;
             ClientSize = new Size(452, 651);
+            Controls.Add(TimeLeftCount);
             Controls.Add(lblPoints);
             Controls.Add(pbHeart6);
             Controls.Add(pbHeart5);
@@ -400,7 +420,7 @@
             Controls.Add(pb2);
             Controls.Add(pb3);
             Controls.Add(pb1);
-            Controls.Add(label1);
+            Controls.Add(TimeLeftCount1);
             Controls.Add(button1);
             Controls.Add(pictureBox1);
             ForeColor = Color.IndianRed;
@@ -436,7 +456,7 @@
 
         private PictureBox pictureBox1;
         private Button button1;
-        private Label label1;
+        private Label TimeLeftCount1;
         private PictureBox pb1;
         private PictureBox pb3;
         private PictureBox pb2;
@@ -460,5 +480,7 @@
         private System.Windows.Forms.Timer tmrDelay;
         private System.Windows.Forms.Timer tmrHeart;
         private Label lblPoints;
+        private System.Windows.Forms.Timer timer_Left;
+        private Label TimeLeftCount;
     }
 }
