@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using System.Media; // Import the System.Media namespace
+using System.Media;
+using WMPLib; // Add this using directive for Windows Media Player
 
 namespace Memory_Matching_Game
 {
@@ -25,8 +26,7 @@ namespace Memory_Matching_Game
         int timeLeft = 60; // Add this line
         System.Windows.Forms.Timer gameTimer; // Declare the timer with full namespace
 
-        SoundPlayer backgroundMusicPlayer; // Declare the SoundPlayer for background music
-        SoundPlayer clickSoundPlayer; // Declare the SoundPlayer for click sound
+        WindowsMediaPlayer backgroundMusicPlayer; // Use WindowsMediaPlayer for background music
 
         public Form1()
         {
@@ -67,11 +67,10 @@ namespace Memory_Matching_Game
             TimeLeftCount.Text = timeLeft.ToString();
 
             // Initialize and start the background music player
-            backgroundMusicPlayer = new SoundPlayer("C:\\Users\\PC\\Desktop\\Memory-Matching-Game\\Memory Matching Game\\Resources\\background_music.wav");
-            backgroundMusicPlayer.PlayLooping(); // Play the music in a loop
-
-            // Initialize the click sound player
-            clickSoundPlayer = new SoundPlayer("C:\\Users\\PC\\Desktop\\Memory-Matching-Game\\Memory Matching Game\\Resources\\click_sound_01.wav");
+            backgroundMusicPlayer = new WindowsMediaPlayer();
+            backgroundMusicPlayer.URL = "C:\\Users\\PC\\Desktop\\Memory-Matching-Game\\Memory Matching Game\\Resources\\background_music.wav";
+            backgroundMusicPlayer.settings.setMode("loop", true);
+            backgroundMusicPlayer.controls.play();
         }
 
         // Load the images into the dictionary
@@ -136,8 +135,11 @@ namespace Memory_Matching_Game
 
             PictureBox pb = (PictureBox)sender;
 
-            // Play the click sound
-            clickSoundPlayer.Play();
+            // Play the click sound using a new SoundPlayer instance
+            using (SoundPlayer clickSoundPlayer = new SoundPlayer("C:\\Users\\PC\\Desktop\\Memory-Matching-Game\\Memory Matching Game\\Resources\\click_sound_01.wav"))
+            {
+                clickSoundPlayer.Play();
+            }
 
             // 0 means the pb is turned off, we will open it and check if the user guessed the correct cards
             if (pb.Tag.ToString() == "0")
@@ -255,7 +257,7 @@ namespace Memory_Matching_Game
             TimeLeftCount.Text = timeLeft.ToString();
             gameTimer.Start(); // Restart the timer
             //music callings
-            backgroundMusicPlayer.Play();
+            backgroundMusicPlayer.controls.play();
         }
 
         private void ResetCards()
