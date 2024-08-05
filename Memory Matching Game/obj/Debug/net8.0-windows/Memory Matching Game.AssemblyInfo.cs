@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Memory Matching Game")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4639d797a2a7887af54d275d07c63d196d3781fb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+691f40a49b4cccbf1385b9b953ef46e5d4235e72")]
 [assembly: System.Reflection.AssemblyProductAttribute("Memory Matching Game")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Memory Matching Game")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
