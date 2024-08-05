@@ -165,7 +165,9 @@ namespace Memory_Matching_Game
                         // Play the match sound using a new SoundPlayer instance
                         using (SoundPlayer matchSoundPlayer = new SoundPlayer("C:\\Users\\PC\\Desktop\\Memory-Matching-Game\\Memory Matching Game\\Resources\\match_image.wav"))
                         {
+                            backgroundMusicPlayer.controls.pause();
                             matchSoundPlayer.Play();
+                            backgroundMusicPlayer.controls.play();
                         }
 
                         // Validate if the user has guessed all the cards
@@ -175,6 +177,7 @@ namespace Memory_Matching_Game
                             // Play the match sound using a new SoundPlayer instance
                             using (SoundPlayer matchSoundPlayer = new SoundPlayer("C:\\Users\\PC\\Desktop\\Memory-Matching-Game\\Memory Matching Game\\Resources\\gameOver_sound.wav"))
                             {
+                                backgroundMusicPlayer.controls.stop();
                                 gameTimer.Stop(); // Stop the timer
                                 matchSoundPlayer.Play();
                                 MessageBox.Show("Congratulations! You Finished this game");
@@ -231,7 +234,9 @@ namespace Memory_Matching_Game
                 // Play the not match sound using a new SoundPlayer instance
                 using (SoundPlayer notMatchSoundPlayer = new SoundPlayer("C:\\Users\\PC\\Desktop\\Memory-Matching-Game\\Memory Matching Game\\Resources\\notMatch_image.wav"))
                 {
+                    backgroundMusicPlayer.controls.pause();
                     notMatchSoundPlayer.Play();
+                    backgroundMusicPlayer.controls.play();
                 }
 
                 // Inform the user that the cards do not match
@@ -245,6 +250,8 @@ namespace Memory_Matching_Game
                     // Play the game over sound using a new SoundPlayer instance
                     using (SoundPlayer gameOverSoundPlayer = new SoundPlayer("C:\\Users\\PC\\Desktop\\Memory-Matching-Game\\Memory Matching Game\\Resources\\gameTimeEnd.wav"))
                     {
+                        gameTimer.Stop(); // Stop the timer
+                        backgroundMusicPlayer.controls.stop();
                         gameOverSoundPlayer.Play();
                     }
 
@@ -276,6 +283,7 @@ namespace Memory_Matching_Game
             // Play the time end sound using a new SoundPlayer instance
             using (SoundPlayer timeEndSoundPlayer = new SoundPlayer("C:\\Users\\PC\\Desktop\\Memory-Matching-Game\\Memory Matching Game\\Resources\\game_restart.wav"))
             {
+                backgroundMusicPlayer.controls.stop();
                 timeEndSoundPlayer.Play();
                 MessageBox.Show("Game Restart!");
                 LifeUsed = 0;
@@ -339,10 +347,11 @@ namespace Memory_Matching_Game
             else
             {
                 gameTimer.Stop();
-
+                
                 // Play the time end sound using a new SoundPlayer instance
                 using (SoundPlayer timeEndSoundPlayer = new SoundPlayer("C:\\Users\\PC\\Desktop\\Memory-Matching-Game\\Memory Matching Game\\Resources\\gameTimeEnd.wav"))
                 {
+                    backgroundMusicPlayer.controls.stop();
                     timeEndSoundPlayer.Play();
                 }
 
