@@ -68,7 +68,7 @@ namespace Memory_Matching_Game
 
             // Initialize and start the background music player
             backgroundMusicPlayer = new WindowsMediaPlayer();
-            backgroundMusicPlayer.URL = "C:\\Users\\PC\\Desktop\\Memory-Matching-Game\\Memory Matching Game\\Resources\\background_music.wav";
+            backgroundMusicPlayer.URL = "background_music.wav";
             backgroundMusicPlayer.settings.setMode("loop", true);
             backgroundMusicPlayer.controls.play();
         }
@@ -135,7 +135,7 @@ namespace Memory_Matching_Game
             PictureBox pb = (PictureBox)sender;
 
             // Play the click sound using a new SoundPlayer instance
-            using (SoundPlayer clickSoundPlayer = new SoundPlayer("C:\\Users\\PC\\Desktop\\Memory-Matching-Game\\Memory Matching Game\\Resources\\click_sound_01.wav"))
+            using (SoundPlayer clickSoundPlayer = new SoundPlayer("click_sound_01.wav"))
             {
                 clickSoundPlayer.Play();
             }
@@ -163,7 +163,7 @@ namespace Memory_Matching_Game
                         lblPoints.Text = UserPoints.ToString();
 
                         // Play the match sound using a new SoundPlayer instance
-                        using (SoundPlayer matchSoundPlayer = new SoundPlayer("C:\\Users\\PC\\Desktop\\Memory-Matching-Game\\Memory Matching Game\\Resources\\match_image.wav"))
+                        using (SoundPlayer matchSoundPlayer = new SoundPlayer("match_image.wav"))
                         {
                             backgroundMusicPlayer.controls.pause();
                             matchSoundPlayer.Play();
@@ -175,7 +175,7 @@ namespace Memory_Matching_Game
                         {
 
                             // Play the match sound using a new SoundPlayer instance
-                            using (SoundPlayer matchSoundPlayer = new SoundPlayer("C:\\Users\\PC\\Desktop\\Memory-Matching-Game\\Memory Matching Game\\Resources\\gameOver_sound.wav"))
+                            using (SoundPlayer matchSoundPlayer = new SoundPlayer("gameOver_sound.wav"))
                             {
                                 backgroundMusicPlayer.controls.stop();
                                 gameTimer.Stop(); // Stop the timer
@@ -232,7 +232,7 @@ namespace Memory_Matching_Game
                 CardsPictureBoxes[cardSelectedIndex].Tag = "0";
 
                 // Play the not match sound using a new SoundPlayer instance
-                using (SoundPlayer notMatchSoundPlayer = new SoundPlayer("C:\\Users\\PC\\Desktop\\Memory-Matching-Game\\Memory Matching Game\\Resources\\notMatch_image.wav"))
+                using (SoundPlayer notMatchSoundPlayer = new SoundPlayer("notMatch_image.wav"))
                 {
                     backgroundMusicPlayer.controls.pause();
                     notMatchSoundPlayer.Play();
@@ -248,7 +248,7 @@ namespace Memory_Matching_Game
                 if (LifeUsed == 6)
                 {
                     // Play the game over sound using a new SoundPlayer instance
-                    using (SoundPlayer gameOverSoundPlayer = new SoundPlayer("C:\\Users\\PC\\Desktop\\Memory-Matching-Game\\Memory Matching Game\\Resources\\gameTimeEnd.wav"))
+                    using (SoundPlayer gameOverSoundPlayer = new SoundPlayer("gameTimeEnd.wav"))
                     {
                         gameTimer.Stop(); // Stop the timer
                         backgroundMusicPlayer.controls.stop();
@@ -281,7 +281,7 @@ namespace Memory_Matching_Game
         {
 
             // Play the time end sound using a new SoundPlayer instance
-            using (SoundPlayer timeEndSoundPlayer = new SoundPlayer("C:\\Users\\PC\\Desktop\\Memory-Matching-Game\\Memory Matching Game\\Resources\\game_restart.wav"))
+            using (SoundPlayer timeEndSoundPlayer = new SoundPlayer("game_restart.wav"))
             {
                 backgroundMusicPlayer.controls.stop();
                 timeEndSoundPlayer.Play();
@@ -349,7 +349,7 @@ namespace Memory_Matching_Game
                 gameTimer.Stop();
                 
                 // Play the time end sound using a new SoundPlayer instance
-                using (SoundPlayer timeEndSoundPlayer = new SoundPlayer("C:\\Users\\PC\\Desktop\\Memory-Matching-Game\\Memory Matching Game\\Resources\\gameTimeEnd.wav"))
+                using (SoundPlayer timeEndSoundPlayer = new SoundPlayer("gameTimeEnd.wav"))
                 {
                     backgroundMusicPlayer.controls.stop();
                     timeEndSoundPlayer.Play();
