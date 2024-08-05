@@ -171,7 +171,16 @@ namespace Memory_Matching_Game
                         // Validate if the user has guessed all the cards
                         if (UserPoints == 6)
                         {
-                            MessageBox.Show("Congratulations! You Finished this game");
+
+                            // Play the match sound using a new SoundPlayer instance
+                            using (SoundPlayer matchSoundPlayer = new SoundPlayer("C:\\Users\\PC\\Desktop\\Memory-Matching-Game\\Memory Matching Game\\Resources\\gameOver_sound.wav"))
+                            {
+                                gameTimer.Stop(); // Stop the timer
+                                matchSoundPlayer.Play();
+                                MessageBox.Show("Congratulations! You Finished this game");
+                            }
+                            
+                            
                             LifeUsed = 0;
                             UserPoints = 0;
                             lblPoints.Text = "0";
@@ -179,7 +188,7 @@ namespace Memory_Matching_Game
                             ResetLife();
                             ShuffleImages();
                             ResetCards();
-                            gameTimer.Stop(); // Stop the timer
+                            
                         }
                     }
                     cardSelectedIndex = index;
@@ -263,18 +272,27 @@ namespace Memory_Matching_Game
 
         private void button1_Click(object sender, EventArgs e)
         {
-            LifeUsed = 0;
-            UserPoints = 0;
-            lblPoints.Text = "0";
-            TimeLeftCount.Text = "60";
-            ResetLife();
-            ShuffleImages();
-            ResetCards();
-            timeLeft = 60; // Reset the timer
-            TimeLeftCount.Text = timeLeft.ToString();
-            gameTimer.Start(); // Restart the timer
-            //music callings
-            backgroundMusicPlayer.controls.play();
+
+            // Play the time end sound using a new SoundPlayer instance
+            using (SoundPlayer timeEndSoundPlayer = new SoundPlayer("C:\\Users\\PC\\Desktop\\Memory-Matching-Game\\Memory Matching Game\\Resources\\game_restart.wav"))
+            {
+                timeEndSoundPlayer.Play();
+                MessageBox.Show("Game Restart!");
+                LifeUsed = 0;
+                UserPoints = 0;
+                lblPoints.Text = "0";
+                TimeLeftCount.Text = "60";
+                ResetLife();
+                ShuffleImages();
+                ResetCards();
+                timeLeft = 60; // Reset the timer
+                TimeLeftCount.Text = timeLeft.ToString();
+                gameTimer.Start(); // Restart the timer
+                                   //music callings
+                backgroundMusicPlayer.controls.play();
+            }
+
+            
         }
 
         private void ResetCards()
