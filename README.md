@@ -5,6 +5,7 @@
 Welcome to the **Memory Matching Game**! This project is a fun and engaging Windows Forms application built using C# in Microsoft Visual Studio 2022 with .NET. The game challenges players to match pairs of cards within a limited amount of time while keeping track of their lives and points. 
 
 
+![image](https://github.com/user-attachments/assets/a74d7669-7ef1-4748-823b-6966a570f64a)
 
 https://github.com/user-attachments/assets/7f5a8fb7-4758-4f6e-899b-dba90544784b
 
