@@ -356,12 +356,11 @@
             // 
             // tmrDelay
             // 
-            tmrDelay.Interval = 2000;
+            tmrDelay.Interval = 400;
             tmrDelay.Tick += tmrDelay_Tick;
             // 
             // tmrHeart
             // 
-            tmrHeart.Interval = 200;
             tmrHeart.Tick += tmrHeart_Tick;
             // 
             // lblPoints
